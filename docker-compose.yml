@@ -55,6 +55,14 @@ services:
       test: [ "CMD", "mysqladmin", "ping", "-p${DB_PASSWORD}" ]
       retries: 3
       timeout: 5s
+
+  mailserver:
+    image: mailhog/mailhog:v1.0.1
+    ports:
+      - "${FORWARD_MAILHOG_PORT:-1025}:1025"
+      - "${FORWARD_MAILHOG_DASHBOARD_PORT:-8025}:8025"
+    networks:
+      - local-network
 networks:
   local-network:
     driver: bridge
