@@ -18,7 +18,7 @@ services:
     depends_on:
       - db
 
-  web_server:
+  webserver:
     image: nginx:stable-alpine
     container_name: example-app-web-server
     restart: unless-stopped
@@ -55,7 +55,6 @@ services:
       test: [ "CMD", "mysqladmin", "ping", "-p${DB_PASSWORD}" ]
       retries: 3
       timeout: 5s
-
 networks:
   local-network:
     driver: bridge
