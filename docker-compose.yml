@@ -7,7 +7,6 @@ services:
       args:
         uid: 1000
         user: moustapha
-    image: example-app
     container_name: example-app
     restart: unless-stopped
     working_dir: /var/www/html
