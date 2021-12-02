@@ -19,7 +19,7 @@ services:
       - db
 
   web_server:
-    image: nginx:1.20.1-alpine
+    image: nginx:stable-alpine
     container_name: example-app-web-server
     restart: unless-stopped
     tty: true
