@@ -14,7 +14,7 @@ services:
     volumes:
       - "./:/var/www/html"
     networks:
-      - example-app
+      - local-network
     depends_on:
       - db
 
@@ -29,7 +29,7 @@ services:
       - "./:/var/www/html"
       - "./docker-compose/nginx:/etc/nginx/conf.d"
     networks:
-      - example-app
+      - local-network
     depends_on:
       - app
 
@@ -50,7 +50,7 @@ services:
     volumes:
       - "mysql:/var/lib/mysql"
     networks:
-      - example-app
+      - local-network
     healthcheck:
       test: [ "CMD", "mysqladmin", "ping", "-p${DB_PASSWORD}" ]
       retries: 3
