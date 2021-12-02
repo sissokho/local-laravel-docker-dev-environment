@@ -60,5 +60,5 @@ networks:
   local-network:
     driver: bridge
 volumes:
-  mysql:
+  db-data:
     driver: local
