@@ -48,7 +48,7 @@ services:
     ports:
       - "${FORWARD_DB_PORT:-3306}:3306"
     volumes:
-      - "./docker-compose/mysql:/var/lib/mysql"
+      - "mysql:/var/lib/mysql"
     networks:
       - example-app
     healthcheck:
@@ -59,3 +59,6 @@ services:
 networks:
   example-app:
     driver: bridge
+volumes:
+  mysql:
+    driver: local
