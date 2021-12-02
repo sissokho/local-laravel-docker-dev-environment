@@ -7,7 +7,7 @@ services:
       args:
         uid: 1000
         user: moustapha
-    container_name: example-app
+    container_name: "${PROJECT_NAME}_app"
     restart: unless-stopped
     working_dir: /var/www/html
     volumes:
@@ -19,7 +19,7 @@ services:
 
   webserver:
     image: nginx:stable-alpine
-    container_name: example-app-web-server
+    container_name: "${PROJECT_NAME}_web-server"
     restart: unless-stopped
     tty: true
     ports:
@@ -34,7 +34,7 @@ services:
 
   db:
     image: mysql/mysql-server:8.0
-    container_name: example-app-db
+    container_name: "${PROJECT_NAME}_db"
     restart: unless-stopped
     tty: true
     environment:
@@ -57,6 +57,7 @@ services:
 
   mailserver:
     image: mailhog/mailhog:v1.0.1
+    container_name: "${PROJECT_NAME}_mailserver"
     ports:
       - "${FORWARD_MAILHOG_PORT:-1025}:1025"
       - "${FORWARD_MAILHOG_DASHBOARD_PORT:-8025}:8025"
