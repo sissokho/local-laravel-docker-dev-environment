@@ -47,7 +47,7 @@ services:
     ports:
       - "${FORWARD_DB_PORT:-3306}:3306"
     volumes:
-      - "mysql:/var/lib/mysql"
+      - "db-data:/var/lib/mysql"
     networks:
       - local-network
     healthcheck:
