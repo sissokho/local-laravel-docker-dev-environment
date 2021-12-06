@@ -19,7 +19,7 @@ services:
 
   webserver:
     image: nginx:stable-alpine
-    container_name: "${PROJECT_NAME}_web-server"
+    container_name: "${PROJECT_NAME}_webserver"
     restart: unless-stopped
     tty: true
     ports:
