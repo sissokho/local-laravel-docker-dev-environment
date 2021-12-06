@@ -11,7 +11,7 @@ services:
     restart: unless-stopped
     working_dir: /var/www/html
     volumes:
-      - "./:/var/www/html"
+      - "./:/var/www/html:cached"
     networks:
       - local-network
     depends_on:
