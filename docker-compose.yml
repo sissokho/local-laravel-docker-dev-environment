@@ -5,8 +5,8 @@ services:
       context: ./
       dockerfile: Dockerfile
       args:
-        uid: 1000
-        user: moustapha
+        uid: "${UID:-1000}"
+        user: "${USER:-moustapha}"
     container_name: "${PROJECT_NAME}_app"
     restart: unless-stopped
     working_dir: /var/www/html
