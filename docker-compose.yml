@@ -55,9 +55,9 @@ services:
       retries: 3
       timeout: 5s
 
-  mailserver:
+  mailhog:
     image: mailhog/mailhog:v1.0.1
-    container_name: "${PROJECT_NAME}_mailserver"
+    container_name: "${PROJECT_NAME}_mailhog"
     ports:
       - "${FORWARD_MAILHOG_PORT:-1025}:1025"
       - "${FORWARD_MAILHOG_DASHBOARD_PORT:-8025}:8025"
